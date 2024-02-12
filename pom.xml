@@ -8,48 +8,27 @@
   <artifactId>camel-example-spring-boot-rest-jpa</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <name>Camel :: Example :: Spring Boot REST / JPA</name>
-  <description>Camel REST DSL with JPA to expose a RESTful API that performs CRUD operations on a database</description>
+  <description>Camel REST DSL with JPA to expose a RESTful API</description>
 
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <spring.boot-version>2.5.13</spring.boot-version>
-    <camel.version>2.23.2.fuse-7_11_0-00037-redhat-00001</camel.version>
-    <mysql.version>8.0.28.redhat-00001</mysql.version>
+    <fuse.bom.version>7.12.0.fuse-7_12_0-00016-redhat-00001</fuse.bom.version>
   </properties>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>${spring.boot-version}</version>
+        <groupId>org.jboss.redhat-fuse</groupId>
+        <artifactId>fuse-springboot-bom</artifactId>
+        <version>${fuse.bom.version}</version>
         <type>pom</type>
         <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.camel</groupId>
-        <artifactId>camel-parent</artifactId>
-        <version>${camel.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <!-- We need to align the Hibernate versions -->
-      <dependency>
-        <groupId>org.hibernate</groupId>
-        <artifactId>hibernate-entitymanager</artifactId>
-      </dependency>
-      <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>${mysql.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
 
   <dependencies>
-
-
 
     <!-- spring-boot -->
     <dependency>
@@ -126,7 +105,6 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
-        <version>${spring.boot-version}</version>
         <executions>
           <execution>
             <goals>
