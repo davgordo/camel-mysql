@@ -15,6 +15,10 @@
     <maven.compiler.target>11</maven.compiler.target>
     <fuse.bom.version>7.12.0.fuse-7_12_0-00016-redhat-00001</fuse.bom.version>
     <spring.boot.maven.plugin.version>2.5.13</spring.boot.maven.plugin.version>
+
+    <jgr.version>0.35.5</jgr.version>
+    <otc.version>0.33.0.redhat-00001</otc.version>
+    <otcc.version>0.1.8.redhat-00001</otcc.version>
   </properties>
 
   <dependencyManagement>
@@ -77,12 +81,32 @@
     <dependency>
       <groupId>io.jaegertracing</groupId>
       <artifactId>jaeger-client</artifactId>
-      <version>1.8.1</version>
+      <version>${jgr.version}</version>
+    </dependency>
+    <!-- Opentracing -->
+    <dependency>
+      <groupId>io.opentracing</groupId>
+      <artifactId>opentracing-api</artifactId>
+      <version>${otc.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.opentracing</groupId>
+      <artifactId>opentracing-util</artifactId>
+      <version>${otc.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.opentracing</groupId>
+      <artifactId>opentracing-noop</artifactId>
+      <version>${otc.version}</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>io.opentracing.contrib</groupId>
-      <artifactId>opentracing-agent</artifactId>
-      <version>0.4.0</version>
+      <artifactId>opentracing-tracerresolver</artifactId>
+      <version>${otcc.version}</version>
+      <scope>provided</scope>
     </dependency>
 
     <!-- JDBC -->
